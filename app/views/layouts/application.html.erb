@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>DavidhahnMe</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Hello, I'm David.</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<%= yield %>
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,400,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="<%= request.base_url %>/favicon.ico">
 
-</body>
+    <link href="/jquery.bxslider.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+  
+  <footer>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <script type="text/javascript" src="/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="/theater.js"></script>
+  </footer>
 </html>
