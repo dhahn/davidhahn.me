@@ -41,18 +41,20 @@
 	  <span class="inner-text"> Here are some things I've made.</span>
 
 	  <ul class="project-wrapper">
-	    <style>
-	      #fridge { background: url(/images/fridge-cover.jpg); }
-	      #fridge:hover { background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(/images/fridge-cover.jpg); }
-	    </style>
+	  	<% @projects.each do |project| %>
+		    <style>
+		      #<%= project[:slug] %> { background: url(<%= project[:image_url] %>); }
+		      #<%= project[:slug] %>:hover { background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(<%= project[:image_url] %>); }
+		    </style>
 
-	    <a target="_blank" href="https://github.com/dhahn/r13-team-45">
-	      <li id="fridge" class="projects">
-					<p> October 2013, Personal </p>
-					<h2> Fridge </h2>
-					<p class="tags"> Skills: Ruby on Rails, Javascript, Postgres </p>
-	      </li>
-	    </a>
+		    <a target="_blank" href="<%= project[:project_url] %>">
+		      <li id="<%= project[:slug] %>" class="projects">
+						<p><%= project[:end_date] %>, <%= project[:project_type] %></p>
+						<h2><%= project[:name] %></h2>
+						<p class="tags"><%= project[:skills] %></p>
+		      </li>
+		    </a>
+		  <% end %>
 
 	  </ul>
 	</div>
