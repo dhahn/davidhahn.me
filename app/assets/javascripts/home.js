@@ -1,55 +1,63 @@
-$(document).ready(function(){ 
-
-  var theater = new TheaterJS();
+var addSayingClass = function (theater) {
   theater
     .on("say:start, erase:start", function (eventName) {
-      var self    = this,
-	  current = self.current.voice;
-
-      self.utils.addClass(current, "saying");
+      this.utils.addClass(this.current.voice, "saying");
     })
     .on("say:end, erase:end", function (eventName) {
-      var self    = this,
-	  current = self.current.voice;
-
-      self.utils.removeClass(current, "saying");
+      this.utils.removeClass(this.current.voice, "saying");
     });
 
-  theater
+  return theater;
+}
+
+var splashScreenInit = function () {
+  var splashScreenTheater = new TheaterJS();
+
+  addSayingClass(splashScreenTheater)
     .describe("Keyword", { speed: .6, accuracy: .6, invincibility: 4 }, "#splash-screen .keyword")
     .describe("OtherWords", { speed: .6, accuracy: .6, invincibility: 4 }, "#splash-screen .other-words")
-    .describe("MakerOfThingsInnerText", { speed: .8, accuracy: .6, invincibility: 4 },"#maker-of-things .inner-text")
-    .describe("MakerOfThingsKeyword", { speed: .6, accuracy: .6, invincibility: 4 }, "#maker-of-things .keyword")
-    .describe("MakeThingsWithInnerText", { speed: .8, accuracy: .6, invincibility: 4 },"#make-things-with .inner-text")
-    .describe("MakeThingsWithKeyword", { speed: .6, accuracy: .6, invincibility: 4 }, "#make-things-with .keyword");
 
-  theater.write("Keyword:Hello", 500, "OtherWords:, I'm David.");
+  splashScreenTheater.write("Keyword:Hello", 500, "OtherWords:, I'm David.");
+}
 
-  var makerCount = -1,
+var makerInit = function () {
+  var makerTheater = new TheaterJS(),
+      makerCount = -1,
       makerWordArray = JSON.parse(window.config.maker_words);
       makerTimeout = setTimeout(makerTimeoutFunction, 1000);
 
+  addSayingClass(makerTheater)
+    .describe("MakerOfThingsKeyword", { speed: .6, accuracy: .6, invincibility: 4 }, "#maker-of-things .keyword")
+
   function makerTimeoutFunction() {
     var new_word = makerWordArray[++makerCount % makerWordArray.length];
-    theater.write("MakerOfThingsKeyword:" + new_word);
+    makerTheater.write("MakerOfThingsKeyword:" + new_word);
     makerTimeout = setTimeout(makerTimeoutFunction, 1000);
   }
+}
 
-  var toolsCount = -1,
+var toolsInit = function() {
+  var toolsTheater = new TheaterJS(),
+      toolsCount = -1,
       toolsWordArray = JSON.parse(window.config.tools_words),
       toolsTimeout = setTimeout(toolsTimeoutFunction, 1000);
 
+  addSayingClass(toolsTheater )
+    .describe("MakeThingsWithKeyword", { speed: .6, accuracy: .6, invincibility: 4 }, "#make-things-with .keyword");
+
   function toolsTimeoutFunction() {
     var new_word = toolsWordArray[++toolsCount % toolsWordArray.length];
-    theater.write("MakeThingsWithKeyword:" + new_word);
+    toolsTheater.write("MakeThingsWithKeyword:" + new_word);
     toolsTimeout = setTimeout(toolsTimeoutFunction, 1000);
   }
+}
 
-  $('a[href^="#"]').on('click',function (e) {
+var hrefScrollInit = function() {
+  $('a.next-section').on('click',function (e) {
     e.preventDefault();
 
-    var target = this.hash;
-    var $target = $(target);
+    var target = this.hash,
+        $target = $(target);
 
     $('html, body').stop().animate({
       'scrollTop': $target.offset().top
@@ -57,8 +65,9 @@ $(document).ready(function(){
       window.location.hash = target;
     });
   });
+}
 
-
+var projectBxSliderInit = function () {
   $('.project-wrapper').bxSlider({
     minSlides: 1,
     maxSlides: 4,
@@ -71,5 +80,16 @@ $(document).ready(function(){
     captions: false,
     infiniteLoop: true
   });
+}
 
+var init = function () {
+  splashScreenInit();
+  makerInit();
+  toolsInit();
+  hrefScrollInit();
+  projectBxSliderInit();
+}
+
+$(document).ready(function() {
+  init();
 });

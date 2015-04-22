@@ -81,7 +81,6 @@ body {
   .keyword {
     left: 57.5%;
     font-weight: 400;
-    width: 4.5rem;
   }
 
   @media screen and (max-width: $break-large) {
@@ -121,7 +120,6 @@ body {
 
   .keyword {
     font-weight: 400;
-    width: 23.5rem;
     left: 60%;
   }
 
@@ -203,7 +201,6 @@ body {
     }
 
     .projects {
-
       background-size: cover;
     }
 
@@ -242,6 +239,7 @@ body {
 
 #details {
   .inner-text {
+    text-align: center;
     font-weight: 100;
     position: absolute;
     width: 30rem;
