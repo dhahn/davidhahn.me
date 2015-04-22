@@ -156,8 +156,11 @@ body {
     width: 60.1rem;
   }
 
-  .project-wrapper {
+  .bx-wrapper, .bx-viewport {
+    height: 330px !important;
+  }
 
+  .project-wrapper {
     .projects {
       background-color: #ecf0f1;
       width: 200px;
