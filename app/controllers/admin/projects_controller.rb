@@ -1,6 +1,6 @@
 class Admin::ProjectsController < ApplicationController
   layout "admin"
-  http_basic_authenticate_with name: "davidhahn", password: "Take@dump"
+  http_basic_authenticate_with name: ENV['HTTP_USERNAME'], password: ENV['HTTP_PASSWORD']
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/projects
