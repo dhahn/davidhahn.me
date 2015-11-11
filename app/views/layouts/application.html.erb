@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<!--[if lte IE 9]><html class="no-js lt-ie10"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js"><!--<![endif]-->
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Hello, I'm David.</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -10,13 +12,12 @@
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="<%= request.base_url %>/favicon.ico">
     <link href="/jquery.bxslider.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/style.css" media="screen">
   </head>
 
-  <body>
+  <body class='<%= "#{controller_name}-#{action_name}" %>'>
     <%= yield %>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
   </body>
-
-  <footer>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  </footer>
 </html>
