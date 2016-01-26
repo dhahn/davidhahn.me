@@ -1989,16 +1989,16 @@ waitFor('body.static_pages-home', function() {
 
   var projectBxSliderInit = function () {
     $('.project-wrapper').bxSlider({
-      minSlides: 1,
+      minSlides: 2,
       maxSlides: 4,
-      controls: true,
+      controls: false,
       speed: 700,
       mode: 'horizontal',
       slideWidth: 260,
-      slideMargin: 0,
+      slideMargin: 10,
       pager: false,
       captions: false,
-      infiniteLoop: true
+      infiniteLoop: false
     });
   };
 
