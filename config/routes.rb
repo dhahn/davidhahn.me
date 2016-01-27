@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
 
+  get '/for-the-eyes-of-jamison' => 'static_pages#hello_jamison'
+
   namespace :admin do
     resources :projects
   end
