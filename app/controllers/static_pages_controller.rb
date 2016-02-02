@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @projects = Project.all
+    @project = Project.last
   end
 
   def hello_jamison; end

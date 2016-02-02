@@ -19,7 +19,7 @@ body {
   .inner-text {
     text-align: center;
     position: absolute;
-    width: 48rem;
+    width: 100%;
     top: 50%;
     left: 50%;
     font-weight: 100  ;
@@ -28,7 +28,6 @@ body {
 
     @include mq(medium) {
       font-size: 8rem;
-      width: 55rem;
     }
   }
 
@@ -70,126 +69,73 @@ body {
     font-size: 3rem;
   }
 
-  // .bx-wrapper, .bx-viewport {
-  //   height: 32rem !important;
-  // }
+  .project-wrapper {
+    background-size: 80rem 60rem;
+    background-repeat: no-repeat;
 
-  // .project-wrapper {
-  //   .projects {
-  //     background-color: #ecf0f1;
-  //     width: 200px;
-  //     height: 250px;
-  //     margin: 30px;
-  //     float: left;
-  //     padding: 1rem;
-  //     cursor: pointer;
-  //     -moz-transition: background 1s;
-  //     -webkit-transition: background 1s;
-  //     -o-transition: background 1s;
-  //     -ms-transition: background 1s;
-  //     transition: background 1s;
-  //     position: relative;
-  //     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 
-  //     p {
-  //       font-size: 10px;
-  //       text-align: left;
-  //     }
-
-  //     h2 {
-  //       font-family: "Droid Serif", serif;
-  //       font-weight: 400;
-  //       line-height: 1rem;
-  //       text-align: left;
-  //       font-size: 35px;
-  //       margin-top: 10px;
-  //     }
-
-  //     .tags {
-  //       position: absolute;
-  //       bottom: 10px;
-  //     }
-
-  //     &:hover {
-  //       p, h2 {
-  //         color: #ffffff;
-  //       }
-  //     }
-  //   }
-
-  //   .projects {
-  //     background-size: cover;
-  //   }
-
-  //   .projects:hover {
-  //     background-size: cover;
-  //     -webkit-filter: grayscale(100%);
-  //     filter: gray;
-  //   }
-  // }
+    img {
+      top: 5rem;
+      width: 80rem;
+      left: 50%;
+      margin-left: -40rem;
+    }
+  }
 }
 
-// #details {
-//   .inner-text {
-//     text-align: center;
-//     font-weight: 100;
-//     position: absolute;
-//     width: 30rem;
-//     left: 50%;
-//     top: 4rem;
-//     transform: translateX(-50%);
-//     -webkit-transform: translateX(-50%);
-//   }
+#details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
 
-//   .icon-wrapper {
-//     position: absolute;
-//     width: 34rem;
-//     left: 50%;
-//     top: 12rem;
-//     transform: translateX(-50%);
-//     -webkit-transform: translateX(-50%);
-//     clear: both;
+  .inner-text {
+    text-align: center;
+    font-weight: 100;
+    position: absolute;
+    width: 30rem;
+    left: 50%;
+    top: 4rem;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+  }
 
-//     .icon  {
-//       list-style-type: none;
-//       float: left;
-//       margin: 50px;
+  .icon-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 33rem;
 
-//       span{
-//         font-size: 80px;
-//         -webkit-transition: color 200ms linear;
-//         -moz-transition: color 200ms linear;
-//         -o-transition: color 200ms linear;
-//         transition: color 200ms linear;
-//         cursor: pointer;
-//       }
-//     }
+    .icon  {
+      list-style-type: none;
+      margin: 3rem;
 
-//     .icon span:hover {
-//       color: #3498db;
-//     }
-//   }
+      span{
+        font-size: 50px;
+        -webkit-transition: color 200ms linear;
+        -moz-transition: color 200ms linear;
+        -o-transition: color 200ms linear;
+        transition: color 200ms linear;
+        cursor: pointer;
+      }
+    }
 
-//   @media screen and (max-width: $mq-medium) {
-//     .inner-text {
-//       font-size: 2.7rem;
-//       width: 17.8rem;
-//     }
+    .icon span:hover {
+      color: #3498db;
+    }
 
-//     .icon-wrapper {
-//       width: 21.5rem;
-//       top:  7.5rem;
+    @include mq(small) {
+      width: 55rem;
 
-//       .icon {
-//         margin: 32px;
+      .icon {
+        margin: 5rem;
 
-//         span {
-//           font-size: 50px;
-//         }
-//       }
-//     }
-//   }
-// }
+        span {
+          font-size: 80px;
+        }
+      }
+    }
+  }
+}
 
 //TODO things that don't probably belong here but I have no idea where they go
 .next-section {

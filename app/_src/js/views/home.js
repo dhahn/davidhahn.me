@@ -1,5 +1,4 @@
 var waitFor = require('waitFor'),
-    nstSlider = require('../lib/jquery.bxslider'),
     TheaterJS = require('../lib/theater');
 
 waitFor('body.static_pages-home', function() {
@@ -73,27 +72,11 @@ waitFor('body.static_pages-home', function() {
     });
   };
 
-  var projectBxSliderInit = function () {
-    $('.project-wrapper').bxSlider({
-      minSlides: 2,
-      maxSlides: 4,
-      controls: false,
-      speed: 700,
-      mode: 'horizontal',
-      slideWidth: 260,
-      slideMargin: 10,
-      pager: false,
-      captions: false,
-      infiniteLoop: false
-    });
-  };
-
   var init = function () {
     splashScreenInit();
     makerInit();
     toolsInit();
     hrefScrollInit();
-    projectBxSliderInit();
   };
 
   $(document).ready(function() {

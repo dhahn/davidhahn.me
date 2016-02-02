@@ -38,25 +38,29 @@
 
 <div id="things-made" class="section">
   <div class="inner-section">
-	  <span class="inner-text"> Here are some things I've made.</span>
+    <!-- <span class="inner-text"> Here are some things I've made.</span> -->
+    <div class="project-wrapper">
+      <style>
+        .project-wrapper { background: url(<%= @project[:image_url] %>); }
+        .project-wrapper:hover { background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(<%= @project[:image_url] %>); }
+      </style>
 
-	  <ul class="project-wrapper">
-	  	<% @projects.each do |project| %>
-		    <style>
-		      #<%= project[:slug] %> { background: url(<%= project[:image_url] %>); }
-		      #<%= project[:slug] %>:hover { background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(<%= project[:image_url] %>); }
-		    </style>
+      <img src="/assets/images/monitor.png">
+    </div>
 
-		    <a target="_blank" href="<%= project[:project_url] %>">
-		      <li id="<%= project[:slug] %>" class="projects">
-						<p><%= project[:end_date] %>, <%= project[:project_type] %></p>
-						<h2><%= project[:name] %></h2>
-						<p class="tags"><%= project[:skills] %></p>
-		      </li>
-		    </a>
-		  <% end %>
-	  </ul>
-	</div>
+<!--     <ul class="project-wrapper">
+      <style>
+        #<%= @project[:slug] %> { background: url(<%= @project[:image_url] %>); }
+        #<%= @project[:slug] %>:hover { background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(<%= @project[:image_url] %>); }
+      </style>
+
+      <li id="<%= @project[:slug] %>" class="projects">
+        <p><%= @project[:end_date] %>, <%= @project[:project_type] %></p>
+        <h2><%= @project[:name] %></h2>
+        <p class="tags"><%= @project[:skills] %></p>
+      </li>
+    </ul>
+ -->  </div>
 
   <a href="#details" class="next-section">
     <span class="icon-arrow-down"></span>
@@ -67,13 +71,36 @@
 <div id="details" class="section">
   <span class="inner-text"> Everything else. </span>
   <ul class="icon-wrapper">
-    <a target="_blank" href="https://twitter.com/extremedavidh"> <li class="icon"> <span class="icon-twitter"></span> </li> </a>
-    <a target="_blank" href="https://github.com/dhahn"> <li class="icon"> <span class="icon-github"></span> </li> </a>
-    <a target="_blank" href="https://www.facebook.com/davidmhahn"> <li class="icon"> <span class="icon-facebook"></span> </li> </a>
-    <a target="_blank" href="https://www.linkedin.com/pub/david-hahn/78/438/448"> <li class="icon"> <span class="icon-linkedin2"></span> </li> </a>
-    <a target="_blank" href="http://www.pandora.com/profile/davidmichaelhahn"> <li class="icon"> <span class="icon-headphones"></span> </li> </a>
-    <a target="_blank" href="#still-to-come"> <li class="icon"> <span class="icon-pencil"></span> </li> </a>
-    <a target="_blank" href="mailto:davidmichaelhahn@gmail.com"> <li class="icon"> <span class="icon-mail"></span> </li> </a>
-    <a target="_blank" href="https://www.google.com/calendar/embed?src=david%4040digits.com&ctz=America/Chicago"> <li class="icon"> <span class="icon-calendar"></span> </li> </a>
+    <li class="icon">
+      <a target="_blank" href="https://twitter.com/extremedavidh"> <span class="icon-twitter"></span></a>
+    </li>
+
+    <li class="icon">
+      <a target="_blank" href="https://github.com/dhahn"> <span class="icon-github"></span></a>
+    </li>
+
+    <li class="icon">
+      <a target="_blank" href="https://www.facebook.com/davidmhahn"> <span class="icon-facebook"></span></a>
+    </li>
+
+    <li class="icon">
+      <a target="_blank" href="https://www.linkedin.com/pub/david-hahn/78/438/448"> <span class="icon-linkedin2"></span></a>
+    </li>
+
+    <li class="icon">
+      <a target="_blank" href="http://www.pandora.com/profile/davidmichaelhahn"> <span class="icon-headphones"></span></a>
+    </li>
+
+    <li class="icon">
+      <a target="_blank" href="#still-to-come"> <span class="icon-pencil"></span></a>
+    </li>
+
+    <li class="icon">
+      <a target="_blank" href="mailto:davidmichaelhahn@gmail.com"> <span class="icon-mail"></span></a>
+    </li>
+
+    <li class="icon">
+      <a target="_blank" href="https://www.google.com/calendar/embed?src=david%4040digits.com&ctz=America/Chicago"> <span class="icon-calendar"></span></a>
+    </li>
   </ul>
 </div>
