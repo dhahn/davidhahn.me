@@ -37,30 +37,14 @@
 </div>
 
 <div id="things-made" class="section">
-  <div class="inner-section">
     <!-- <span class="inner-text"> Here are some things I've made.</span> -->
     <div class="project-wrapper">
       <style>
-        .project-wrapper { background: url(<%= @project[:image_url] %>); }
-        .project-wrapper:hover { background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(<%= @project[:image_url] %>); }
+        .project-wrapper { background: url('/assets/images/monitor.png'); }
       </style>
 
-      <img src="/assets/images/monitor.png">
+      <img src="<%= @project[:image_url] %>">
     </div>
-
-<!--     <ul class="project-wrapper">
-      <style>
-        #<%= @project[:slug] %> { background: url(<%= @project[:image_url] %>); }
-        #<%= @project[:slug] %>:hover { background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(<%= @project[:image_url] %>); }
-      </style>
-
-      <li id="<%= @project[:slug] %>" class="projects">
-        <p><%= @project[:end_date] %>, <%= @project[:project_type] %></p>
-        <h2><%= @project[:name] %></h2>
-        <p class="tags"><%= @project[:skills] %></p>
-      </li>
-    </ul>
- -->  </div>
 
   <a href="#details" class="next-section">
     <span class="icon-arrow-down"></span>
