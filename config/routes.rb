@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get '/for-the-eyes-of-jamison' => 'static_pages#hello_jamison'
+  get '/.well-known/acme-challenge/H1I8ManZosQEqC4SuA8wLDXkJfPNP8B1D5ysMQQgJjs' => 'static_pages#letsencrypt'
 
   namespace :admin do
     resources :projects

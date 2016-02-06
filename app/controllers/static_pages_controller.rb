@@ -4,4 +4,8 @@ class StaticPagesController < ApplicationController
   end
 
   def hello_jamison; end
+
+  def letsencrypt
+    render text: ENV['LETSENCRYPTKEY']
+  end
 end
