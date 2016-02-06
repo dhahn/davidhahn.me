@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get '/for-the-eyes-of-jamison' => 'static_pages#hello_jamison'
-  get "/.well-known/acme-challenge/#{ENV['LETSENCRYPTVERIFYROUTE']}" => 'static_pages#letsencrypt'
+  get "/.well-known/acme-challenge/#{ENV['LETSENCRYPTVERIFYROUTE1']}" => 'static_pages#letsencrypt1'
+  get "/.well-known/acme-challenge/#{ENV['LETSENCRYPTVERIFYROUTE2']}" => 'static_pages#letsencrypt2'
 
   namespace :admin do
     resources :projects
