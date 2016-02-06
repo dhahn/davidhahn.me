@@ -5,7 +5,11 @@ class StaticPagesController < ApplicationController
 
   def hello_jamison; end
 
-  def letsencrypt
-    render text: ENV['LETSENCRYPTKEY']
+  def letsencrypt1
+    render text: ENV['LETSENCRYPTKEY1']
+  end
+
+  def letsencrypt2
+    render text: ENV['LETSENCRYPTKEY2']
   end
 end
