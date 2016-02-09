@@ -39,11 +39,8 @@
 <div id="things-made" class="section">
     <!-- <span class="inner-text"> Here are some things I've made.</span> -->
     <div class="project-wrapper">
-      <style>
-        .project-wrapper { background: url('/assets/images/monitor.png'); }
-      </style>
-
-      <img src="<%= @project[:image_url] %>">
+      <img class="monitor" src="/assets/images/monitor.png">
+      <img class="in-monitor" src="<%= @project[:image_url] %>">
     </div>
 
   <a href="#details" class="next-section">

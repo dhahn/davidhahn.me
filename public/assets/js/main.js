@@ -601,7 +601,7 @@ waitFor('body.static_pages-home', function() {
         makerTimeout = setTimeout(makerTimeoutFunction, 1000);
 
     addSayingClass(makerTheater)
-      .describe("MakerOfThingsKeyword", { speed: .6, accuracy: .6, invincibility: 4 }, "#maker-of-things .keyword")
+      .describe("MakerOfThingsKeyword", { speed: .7, accuracy: .6, invincibility: 4 }, "#maker-of-things .keyword")
 
     function makerTimeoutFunction() {
       var new_word = makerWordArray[++makerCount % makerWordArray.length];
@@ -617,7 +617,7 @@ waitFor('body.static_pages-home', function() {
         toolsTimeout = setTimeout(toolsTimeoutFunction, 1000);
 
     addSayingClass(toolsTheater )
-      .describe("MakeThingsWithKeyword", { speed: .6, accuracy: .6, invincibility: 4 }, "#make-things-with .keyword");
+      .describe("MakeThingsWithKeyword", { speed: .7, accuracy: .6, invincibility: 4 }, "#make-things-with .keyword");
 
     function toolsTimeoutFunction() {
       var new_word = toolsWordArray[++toolsCount % toolsWordArray.length];
