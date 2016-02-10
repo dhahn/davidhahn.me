@@ -38,7 +38,7 @@ body {
 
 #maker-of-things, #make-things-with {
   text-align: center;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 100;
 
   .inner-text, .keyword {
@@ -91,17 +91,26 @@ body {
 
     .in-monitor {
       z-index: 1;
-      padding: 20px;
+      padding: 15px;
+      height: 22rem;
     }
 
     @include mq(large) {
       width: 44rem;
       height: 33rem;
+
+      .in-monitor {
+        height: 27rem;
+      }
     }
 
     @include mq(xlarge) {
       width: 70rem;
       height: 53rem;
+
+      .in-monitor {
+        height: 43rem;
+      }
     }
   }
 }
