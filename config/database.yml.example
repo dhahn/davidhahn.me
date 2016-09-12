@@ -1,7 +1,24 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: davidhahnme
+  database: <%= ENV["DB_SCHEMA_DAVIDHAHNDOTME"] %>
+  username: <%= ENV["DB_USER_DAVIDHAHNDOTME"] %>
+  password: <%= ENV["DB_PASSWORD_DAVIDHAHNDOTME"] %>
   pool: 5
-  username: 
-  password:
+
+staging:
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV["DB_SCHEMA_DAVIDHAHNDOTME"] %>
+  username: <%= ENV["DB_USER_DAVIDHAHNDOTME"] %>
+  password: <%= ENV["DB_PASSWORD_DAVIDHAHNDOTME"] %>
+  pool: 5
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV["DB_SCHEMA_DAVIDHAHNDOTME"] %>
+  username: <%= ENV["DB_USER_DAVIDHAHNDOTME"] %>
+  password: <%= ENV["DB_PASSWORD_DAVIDHAHNDOTME"] %>
+  pool: 5
+
