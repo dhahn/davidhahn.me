@@ -5,10 +5,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.1'
 # Use pg as the database for Active Record
 gem 'pg'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'foreman'
-  gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
