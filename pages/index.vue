@@ -2,26 +2,45 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">
-        davidhahn.me
+
+      <h1 class="font-sans font-light text-5xl text-gray-700 tracking-wide">
+        David Hahn
       </h1>
+
       <h2 class="subtitle">
-        Personal site for David Hahn
+        The future of your yesterday is my now.
       </h2>
+
       <div class="links">
         <a
-          href="https://nuxtjs.org/"
+          href="https://twitter.com/_hahnzilla"
           target="_blank"
-          class="button--green"
         >
-          Documentation
+          <font-awesome-icon size="3x" :icon="['fab', 'twitter']" />
         </a>
+
         <a
-          href="https://github.com/nuxt/nuxt.js"
+          href="https://github.com/dhahn"
           target="_blank"
-          class="button--grey"
+          class="ml-4"
         >
-          GitHub
+          <font-awesome-icon size="3x" :icon="['fab', 'github']" />
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/david-michael-hahn"
+          target="_blank"
+          class="ml-4"
+        >
+          <font-awesome-icon size="3x" :icon="['fab', 'linkedin']" />
+        </a>
+
+        <a
+          href="mailto:davidmichaelhahn@gmail.com"
+          target="_blank"
+          class="ml-4"
+        >
+          <font-awesome-icon size="3x" :icon="['fas', 'envelope-open']" />
         </a>
       </div>
     </div>
@@ -51,16 +70,6 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
 }
 
 .subtitle {
